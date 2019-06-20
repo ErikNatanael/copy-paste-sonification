@@ -1,0 +1,949 @@
+javafx: 10567
+scene: 7720
+beans: 3053
+property: 2510
+Node: 2264
+css: 1534
+layout: 1178
+get(): 995
+ObjectPropertyBase: 933
+<init>(): 847
+sun: 663
+Styleable): 652
+control: 617
+CssStyleHelper: 601
+Region: 552
+getParent(): 485
+Parent: 475
+isSettable(javafx: 456
+text: 453
+binding: 452
+Scene: 407
+util: 378
+<init>(javafx: 294
+getValue(): 272
+DoublePropertyBase: 259
+getScene(): 258
+collections: 252
+Text: 238
+StyleMap, java: 231
+Node): 226
+BooleanPropertyBase: 224
+DirtyBits): 207
+CssStyleHelper$CacheContainer: 206
+Set): 205
+fxml: 201
+getStyleableParent(): 192
+getStyleMap(javafx: 176
+Styleable, String, com: 173
+shape: 172
+ObjectExpression: 166
+getRoot(): 164
+stage: 162
+impl_markDirty(com: 152
+HBox: 138
+fireValueChangedEvent(): 132
+BooleanExpression: 131
+ReadOnlyObjectProperty: 128
+markInvalid(): 126
+<init>(Object): 126
+isBound(): 123
+Labeled: 119
+getStyleableProperty(javafx: 119
+impl_geomChanged(): 118
+invalidated(): 115
+geometry: 114
+access$700(javafx: 112
+StringPropertyBase: 112
+requestLayout(): 108
+ListChangeBuilder: 108
+notifyParentOfBoundsChange(): 102
+transformedBoundsChanged(): 102
+DoubleExpression: 96
+ObjectProperty: 96
+VBox: 92
+resolveRef(javafx: 92
+Labeled): 88
+CacheContainer, javafx: 88
+set(Object): 88
+Shape: 84
+markDirtyLayout(boolean): 82
+Styleable, com: 78
+Set, javafx: 78
+StyleableObjectProperty: 74
+Control: 73
+ReadOnlyObjectWrapper: 71
+Region): 68
+FXMLLoader: 67
+requestParentLayout(): 66
+1): 66
+FXMLLoader$Element: 65
+SimpleObjectProperty: 64
+isVisible(): 63
+set(double): 62
+ReadOnlyBooleanProperty: 62
+ObservableListBase: 61
+getStyle(javafx: 61
+Node$LazyBoundsProperty: 60
+paint: 59
+impl_isDirtyEmpty(): 56
+ReadOnlyObjectWrapper$ReadOnlyPropertyImpl: 56
+childBoundsChanged(javafx: 56
+Camera: 55
+Window: 54
+resolveLookups(javafx: 52
+ObjectProperty, java: 52
+Text): 52
+ParsedValueImpl, com: 52
+image: 51
+<init>(Object, String): 50
+BooleanProperty: 50
+addListener(javafx: 48
+InvalidationListener): 48
+ReadOnlyDoubleProperty: 48
+Labeled$StyleableProperties$1: 48
+setLayoutFlag(com: 44
+LayoutFlags): 44
+value: 43
+set(boolean): 42
+Scene): 41
+DoubleProperty: 40
+Region$InsetsProperty: 40
+SimpleBooleanProperty: 40
+Node, boolean): 39
+Node, com: 39
+prefWidth(double): 39
+Scene, javafx: 38
+endChange(): 36
+prefHeight(double): 36
+CalculatedValue): 36
+StringExpression: 35
+ReadOnlyObjectPropertyBase: 34
+Node$TreeVisiblePropertyReadOnly: 34
+isManaged(): 34
+Image: 33
+getInsets(): 32
+getBorder(): 32
+ReadOnlyBooleanWrapper: 32
+getPadding(): 32
+getFont(): 32
+clearSizeCache(): 31
+setChildDirty(javafx: 31
+isWrapText(): 30
+isUserSetFont(javafx: 30
+ReadOnlyDoubleWrapper: 30
+snapSpace(double): 30
+Stage: 30
+getReadOnlyProperty(): 29
+beginChange(): 27
+ReadOnlyBooleanWrapper$ReadOnlyPropertyImpl: 26
+<init>(double): 26
+Styleable, javafx: 26
+addToSceneDirtyList(): 26
+CssMetaData, com: 26
+sceneProperty(): 26
+impl_reapplyCSS(): 26
+Shape): 26
+<init>(boolean): 26
+getLayoutBounds(): 26
+getContentBias(): 25
+reapplyCss(): 24
+impl_isTreeVisible(): 24
+Labeled$StyleableProperties$4: 24
+NumberExpressionBase: 24
+ReadOnlyBooleanPropertyBase: 24
+event: 24
+PseudoClassState[]): 24
+bind(javafx: 24
+impl_treeVisibleProperty(): 24
+ObservableValue): 24
+<init>(Object, String, Object): 24
+createStyleHelper(javafx: 24
+updateParentTriggerStates(javafx: 24
+getTransitionStates(javafx: 24
+Styleable, int, com: 24
+impl_transformsChanged(): 24
+Pane: 23
+Node$LazyTransformProperty: 23
+getWidth(): 23
+getHeight(): 23
+Text$StyleableProperties$6: 22
+minHeight(double): 22
+Node$ReadOnlyObjectWrapperManualFire: 22
+hashCode(): 22
+minWidth(double): 22
+Text$StyleableProperties$8: 22
+Region$StyleableProperties$1: 21
+setHeight(double): 20
+impl_layoutBoundsChanged(): 20
+getCachedFont(javafx: 20
+nextAdd(int, int): 20
+SubScene, boolean): 20
+snapSize(double): 20
+setNeedsLayout(boolean): 20
+getCssMetaData(): 20
+Node$12: 20
+setWidth(double): 20
+getAlignmentInternal(): 20
+getClassCssMetaData(): 20
+getAlignment(): 20
+canReuseStyleHelper(javafx: 19
+StyleMap): 19
+getEffectiveNodeOrientation(): 19
+WritableValue): 19
+getDefault(): 19
+Color: 19
+impl_processCSS(javafx: 19
+Font: 19
+StyleableBooleanProperty: 18
+set(String): 18
+getConstraint(javafx: 18
+fontProperty(): 18
+updateCanReceiveFocus(): 18
+<init>(double, double, double, double, double, double): 18
+getMargin(javafx: 18
+getBoundsType(): 18
+getOrientationParent(): 18
+Paint): 18
+Region$StyleableProperties$3: 18
+Labeled, javafx: 18
+Node$NodeTransformation: 18
+Node, Object): 18
+isDisabled(): 17
+ReadOnlyDoublePropertyBase: 17
+snapSpace(double, boolean): 17
+isResizable(): 17
+Button: 16
+List, double, boolean): 16
+Node, double, javafx: 16
+Control$4: 16
+resize(double, double): 16
+StringProperty: 16
+access$200(javafx: 16
+Labeled$StyleableProperties$2: 16
+getNodeOrientation(): 16
+BoundingBox: 16
+SimpleDoubleProperty: 16
+markDirty(javafx: 16
+Labeled$StyleableProperties$11: 16
+invalidateLocalToSceneTransform(): 16
+updateTreeVisible(boolean): 16
+Window$TKBoundsConfigurator: 16
+Node, double): 16
+StyleableDoubleProperty: 16
+Window): 16
+impl_notifyLayoutBoundsChanged(): 16
+commit(): 16
+ListChangeListener: 15
+boundsTypeProperty(): 15
+getClip(): 15
+fireChange(javafx: 15
+Change): 15
+markCameraDirty(): 14
+getSpacing(): 14
+markOwnerDirty(): 14
+isFocusTraversable(): 14
+Node$11: 14
+widthChanged(double): 14
+ReadOnlyStringProperty: 14
+focusSetDirty(javafx: 14
+computeBounds(): 14
+ModifiableObservableListBase: 14
+impl_computeLayoutBounds(): 14
+ObservableListBase): 14
+FXMLLoader$ControllerAccessor: 14
+ListChangeBuilder$SingleChange: 14
+calcEffectiveNodeOrientation(): 14
+heightChanged(double): 14
+SubChange, javafx: 14
+getTextLayout(): 14
+Node$10: 14
+computeMaxHeight(double): 13
+FXMLLoader$ValueElement: 13
+getFocusOwner(): 12
+getWindow(): 12
+getFontInternal(): 12
+lookup(javafx: 12
+Text, com: 12
+VPos, boolean): 12
+markDirtyLayoutBranch(): 12
+Control$1: 12
+needsTextLayout(): 12
+getPrefWidth(): 12
+net: 12
+List, javafx: 12
+invalidateLocalToParentTransform(): 12
+impl_isDirty(com: 12
+maxWidth(double): 12
+Pos): 12
+<init>(java: 12
+<init>(String): 12
+ReadOnlyObjectWrapper): 12
+getTextInternal(): 12
+access$102(javafx: 12
+getEffectiveOrientation(byte): 12
+setTreeVisible(boolean): 12
+snapSize(double, boolean): 12
+getManagedChildren(): 12
+computeMaxWidth(double): 12
+notifyParentsOfInvalidatedCSS(): 12
+maxHeight(double): 12
+Text, javafx: 12
+HPos, javafx: 12
+ReadOnlyDoubleWrapper$ReadOnlyPropertyImpl: 12
+ReadOnlyObjectWrapper, javafx: 12
+Region$StyleableProperties$4: 12
+getPrefHeight(): 11
+textFillProperty(): 11
+geom: 11
+Node$StyleableProperties$3: 11
+VPos): 11
+StyleMap, com: 10
+getFill(): 10
+StyleMap, int): 10
+URL, java: 10
+Text$8: 10
+StyleMap, int, javafx: 10
+parentResolvedOrientationInvalidated(): 10
+lookupInheritedFontProperty(javafx: 10
+lookupFont(javafx: 10
+Text$6: 10
+CacheContainer, boolean): 10
+invalidatedScenes(javafx: 10
+setScenes(javafx: 10
+disabledPropertyImpl(): 10
+access$100(javafx: 10
+getEffectiveCamera(): 10
+initializeInternalEventDispatcher(): 10
+<init>(double, double, double, double): 10
+CascadingStyle): 10
+fireSuperValueChangedEvent(): 10
+StyleMap, int, com: 10
+nodeResolvedOrientationInvalidated(): 10
+access$600(javafx: 10
+insertAdd(int, int): 10
+FXMLLoader$PropertyElement: 10
+AccessibleAttribute): 10
+boundedSize(double, double, double): 10
+notifyAccessibleAttributeChanged(javafx: 10
+add(int, Object): 10
+calcAutomaticNodeOrientation(): 10
+Node$StyleableProperties$11: 9
+hasProperties(): 9
+Region$StyleableProperties$2: 9
+Region$StyleableProperties$7: 9
+Region$StyleableProperties$11: 9
+Region$StyleableProperties$9: 9
+Node$StyleableProperties$5: 9
+Region$StyleableProperties$15: 9
+Map): 9
+ObservableList): 9
+Background: 9
+Node$StyleableProperties$1: 9
+Node$StyleableProperties$14: 9
+Region$StyleableProperties$14: 9
+ListChangeListener$Change: 9
+Node$StyleableProperties$8: 9
+Node$StyleableProperties$12: 9
+Region$StyleableProperties$13: 9
+Insets: 9
+Region$StyleableProperties$12: 9
+Node$StyleableProperties$2: 9
+Node$StyleableProperties$7: 9
+alignmentProperty(): 9
+Region$StyleableProperties$10: 9
+Node$StyleableProperties$6: 9
+Region$StyleableProperties$6: 9
+Node$StyleableProperties$9: 9
+Node$StyleableProperties$4: 9
+getId(): 9
+Region$StyleableProperties$5: 9
+Node$StyleableProperties$10: 9
+Labeled$StyleableProperties$3: 8
+needsFullTextLayout(): 8
+Node$EffectiveOrientationProperty: 8
+Text$TextAttribute: 8
+Paint$1: 8
+isTyped(): 8
+Labeled$StyleableProperties$8: 8
+shouldFillHeight(): 8
+computePrefHeight(double): 8
+StyleableStringProperty: 8
+fireValueChanged(): 8
+SkinBase: 8
+layoutYProperty(): 8
+access$500(javafx: 8
+convert(java: 8
+setLayoutY(double): 8
+Node, double, double, double, double, double, javafx: 8
+CascadingStyle, javafx: 8
+checkModeChanged(): 8
+getMinHeight(): 8
+computePrefWidth(double): 8
+setLayoutX(double): 8
+Bounds: 8
+Button, boolean): 8
+ResourceBundle, javafx: 8
+Insets, boolean, boolean, javafx: 8
+resizeRootOnSceneSizeChange(double, double): 8
+Control$StyleableProperties$1: 8
+Window, javafx: 8
+Insets, double, boolean): 8
+ReadOnlyBooleanWrapper, javafx: 8
+Control): 8
+setDirty(javafx: 8
+Insets, double): 8
+Labeled$StyleableProperties$9: 8
+Labeled$StyleableProperties$7: 8
+Labeled$StyleableProperties$6: 8
+Labeled$StyleableProperties$10: 8
+getInternalEventDispatcher(): 8
+Labeled$StyleableProperties$13: 8
+ReadOnlyBooleanWrapper): 8
+getProperties(): 8
+getMinWidth(): 8
+relocate(double, double): 8
+getTextAlignment(): 8
+computeMode(): 8
+layoutChildren(): 8
+<init>(Object, String, double): 8
+Labeled$StyleableProperties$5: 8
+calculateValue(com: 8
+getLineSpacing(): 8
+layoutInArea(javafx: 8
+layoutXProperty(): 8
+Node$8: 8
+Node, javafx: 8
+Region, double): 8
+getText(): 8
+updateSnappedInsets(): 8
+BackgroundConverter: 8
+VBox): 8
+isMutable(javafx: 8
+Shape$1: 8
+getControlCssMetaData(): 8
+Labeled$StyleableProperties$12: 8
+fontSmoothingTypeProperty(): 7
+getValueAdapter(): 7
+getMaxHeight(): 7
+finalizeSubChange(javafx: 7
+ParallelCamera: 7
+setNeedsRepaint(): 7
+Window$SceneModel: 7
+Node$NodeTransformation$LocalToSceneTransformProperty: 7
+List): 7
+localToSceneTransformProperty(): 7
+getMaxWidth(): 7
+tk: 7
+application: 7
+processStartElement(): 7
+checkState(): 7
+SubChange): 7
+Scene$KeyHandler: 7
+equals(Object): 7
+EventHandler): 6
+Insets): 6
+Shape$StyleableProperties$5: 6
+layout(): 6
+getTranslateY(): 6
+Button$2: 6
+access$800(javafx: 6
+input: 6
+heightPropertyImpl(): 6
+usesMirroring(): 6
+applyBounds(): 6
+Labeled$14: 6
+setViewHeight(double): 6
+computeMinHeight(double): 6
+FileTabPaneController: 6
+getMirroringOrientationParent(): 6
+getAreaWidths(java: 6
+computeChildPrefAreaWidth(javafx: 6
+computeDerivedDepthTest(): 6
+Text$StyleableProperties$3: 6
+applyStyle(javafx: 6
+BuilderFactory, javafx: 6
+Image$DoublePropertyImpl: 6
+Parent): 6
+Scene$TargetWrapper: 6
+setDisabled(boolean): 6
+disabledProperty(): 6
+computeMinWidth(double): 6
+widthPropertyImpl(): 6
+Shape$StyleableProperties$9: 6
+Shape$StyleableProperties$8: 6
+SubScene, javafx: 6
+SubScene): 6
+handleNoStyleFound(javafx: 6
+Text$StyleableProperties$5: 6
+getWrappingWidth(): 6
+computeChildPrefAreaHeight(javafx: 6
+Shape$StyleableProperties$2: 6
+Shape$StyleableProperties$4: 6
+TextBoundsType): 6
+FXMLLoader$InstanceDeclarationElement: 6
+childIncluded(javafx: 6
+hasMirroring(): 6
+scenesChanged(javafx: 6
+updateDisabled(): 6
+mnemonicParsingProperty(): 6
+Image$ObjectPropertyImpl: 6
+Scene$6: 6
+FontSmoothingType): 6
+Shape$StyleableProperties$7: 6
+unbind(): 6
+Controllers: 6
+processEndElement(): 6
+Button$1: 6
+transitionToState(javafx: 6
+transform: 6
+isFillWidth(): 6
+Shape$StyleableProperties$10: 6
+Scene$5: 6
+processAttribute(String, String, String): 6
+getTranslateX(): 6
+Node$1: 6
+Image, String): 6
+StyleOrigin, Object): 6
+setViewWidth(double): 6
+invalidate(): 6
+Shape$StyleableProperties$3: 6
+Shape$StyleableProperties$6: 6
+Screen: 6
+impl_getPeer(): 5
+getTempArray(int): 5
+CssMetaData: 5
+apply(): 5
+checkAddRemoveList(): 5
+nio: 5
+impl_getPlatformImage(): 5
+Node$NodeTransformation$1: 5
+reset(): 5
+processInstancePropertyAttributes(): 5
+sum(double[], int): 5
+List, int[], boolean): 5
+findSubChange(int, java: 5
+getAutomaticOrientation(byte): 5
+contentDisplayProperty(): 5
+ListChangeBuilder$SubChange: 5
+getChildren(): 5
+getInternalValue(): 5
+<init>(int, int, java: 5
+setDirty(): 5
+isOpaque(): 5
+addToDirtyList(javafx: 5
+getCamera(): 5
+charset: 5
+Labeled$StyleableProperties: 4
+set(javafx: 4
+Scene$4: 4
+show(): 4
+setScene(javafx: 4
+impl_initPeer(): 4
+position(javafx: 4
+EventType, javafx: 4
+BackgroundFill: 4
+BackgroundImage[]): 4
+VBox$1: 4
+impl_updatePeer(): 4
+Node, double, double, boolean, boolean, com: 4
+Labeled$11: 4
+VBox$StyleableProperties$3: 4
+fireEvent(javafx: 4
+Event): 4
+Window$9: 4
+addAll(java: 4
+getStroke(): 4
+List, double[][], double, double): 4
+getLayoutY(): 4
+boundedNodeSizeWithBias(javafx: 4
+Vec2d): 4
+access$2800(): 4
+Text$TextAttribute$4: 4
+StyleConverter: 4
+Event: 4
+processValue(Class, String, String): 4
+skinClassNameProperty(): 4
+access$1700(javafx: 4
+VBox$3: 4
+ContentDisplay): 4
+getInsetsConverter(): 4
+Paint: 4
+access$900(javafx: 4
+BaseBounds): 4
+FXMLLoader): 4
+Text$2: 4
+Text$5: 4
+to32BitInteger(int, int, int, int): 4
+access$1600(javafx: 4
+SimpleTextEditor: 4
+VBox$StyleableProperties$2: 4
+BackgroundFill[], javafx: 4
+Models: 4
+cancelButtonProperty(): 4
+HBox$1: 4
+VBox$StyleableProperties$1: 4
+setController(Object): 4
+setAlignment(javafx: 4
+access$1800(javafx: 4
+getAreaHeights(java: 4
+updateValue(Object): 4
+access$1000(javafx: 4
+Callback): 4
+Attribute): 4
+Callback, javafx: 4
+getClassLoader(): 4
+computeTransform(javafx: 4
+Node$16: 4
+Region$7: 4
+Scene$9: 4
+HBox$2: 4
+getSkin(): 4
+Callback, double[], javafx: 4
+add(Object): 4
+acc_isMutable(): 4
+Font): 4
+getYAdjustment(com: 4
+NodeTransformation): 4
+PlatformImage, double, double): 4
+Skin): 4
+Region$6: 4
+ButtonBase: 4
+Region$2: 4
+computeOpaqueInsets(double, double, boolean, double[]): 4
+access$3200(javafx: 4
+getPrimary(): 4
+Text$TextAttribute$5: 4
+Region$3: 4
+setSpacing(double): 4
+Region, com: 4
+setMnemonicParsing(boolean): 4
+createDefaultSkin(): 4
+Platform: 4
+spacingProperty(): 4
+textProperty(): 4
+Transform): 4
+VBox$2: 4
+getLayoutX(): 4
+Callback, java: 4
+Text$TextAttribute$2: 4
+Parent, double, double): 4
+Labeled$1: 4
+Collection): 4
+applyProperty(String, Class, Object): 4
+impl_visibleChanging(boolean): 4
+computeContentWidth(java: 4
+isFillHeight(): 4
+processPropertyAttribute(javafx: 4
+getLogicalBounds(): 4
+Labeled$6: 4
+Tab): 4
+getMaxAreaHeight(java: 4
+isDisable(): 4
+defaultButtonProperty(): 4
+access$400(javafx: 4
+Node, double, double, double, double, double, double, double, double, double, javafx: 4
+Main: 4
+getX(): 4
+access$600(): 4
+CornerRadii, javafx: 4
+Paint, javafx: 4
+lang: 3
+impl_createPeer(): 3
+addAccessibleMembers(Class, int, int, int): 3
+Stage$ResizableProperty: 3
+getScaleY(): 3
+Node$3: 3
+getNodeTransformation(): 3
+getRotate(): 3
+processEventHandlerAttributes(): 3
+isCollection(): 3
+FXMLLoader$MethodHandler: 3
+Stage): 3
+processValue(): 3
+reflect: 3
+HPos): 3
+platformImagePropertyImpl(): 3
+getTranslateZ(): 3
+getCameraTransform(): 3
+Scene$ScenePeerPaintListener: 3
+computeXOffset(double, double, javafx: 3
+Node$FocusedProperty: 3
+isSupported(javafx: 3
+JavaFXBuilderFactory: 3
+FXMLLoader$2: 3
+getPrefBaselineComplement(): 3
+FXCollections: 3
+values(): 3
+Method, javafx: 3
+getScaleX(): 3
+KeyCodeCombination: 3
+getScaleZ(): 3
+StageStyle): 3
+updateLocalToParentTransform(): 3
+Charset): 3
+getDepthTest(): 3
+computeYOffset(double, double, javafx: 3
+WindowEvent: 3
+Scene$TouchGesture: 3
+<init>(Object, java: 3
+EventType): 3
+Scene$TouchMap: 3
+ConditionalFeature): 3
+EventTarget, javafx: 3
+access$000(): 3
+impl_visibleChanged(boolean): 3
+io: 3
+createInternalEventDispatcher(): 3
+setImpl_selectionEnd(int): 2
+load(): 2
+observableHashMap(): 2
+FXMLLoader, javafx: 2
+init(): 2
+access$502(javafx: 2
+impl_setWindow(javafx: 2
+resizableProperty(): 2
+URL): 2
+loadImpl(java: 2
+getBuilder(Class): 2
+setResizable(boolean): 2
+getMaxAreaWidth(java: 2
+Scene$13: 2
+pseudoClassStateChanged(javafx: 2
+setLocation(double, double, float, float): 2
+setRoot(javafx: 2
+getY(): 2
+validityKnown(): 2
+createElement(): 2
+KeyHandler, javafx: 2
+computeChildMinAreaWidth(javafx: 2
+setOnAction(javafx: 2
+Parent, double, double, javafx: 2
+ObjectPropertyBase$Listener: 2
+setShowing(boolean): 2
+processImport(): 2
+isShowing(): 2
+getControllerMethods(): 2
+Paint, boolean, javafx: 2
+computeChildMinAreaHeight(javafx: 2
+lambda$onCloseEvent$0(javafx: 2
+resizeRootToPreferredSize(javafx: 2
+Scene$ClickGenerator: 2
+snapPosition(double, boolean): 2
+incListenerReasons(): 2
+rootProperty(): 2
+setSize(double, double, double, double): 2
+setPlatformImageWH(com: 2
+computeMaxPrefAreaWidth(java: 2
+<init>(Object, String, String): 2
+finishImage(com: 2
+SupportedType[]): 2
+setMinWidth(double): 2
+computeContentHeight(java: 2
+Control, String): 2
+getControllerMethodHandle(String, javafx: 2
+FXMLLoader, Class): 2
+Window, boolean): 2
+ButtonBase$2: 2
+computeMaxMinAreaHeight(java: 2
+getProjViewTransform(): 2
+isDepthBufferInternal(): 2
+Scene$MouseHandler: 2
+getPreferredWidth(javafx: 2
+Stop: 2
+storePlatformImageWH(com: 2
+resolvePrefixedValue(String): 2
+closeTabsAndExit(): 2
+getWindowScreen(): 2
+access$1100(javafx: 2
+setWindow(javafx: 2
+setCancelButton(boolean): 2
+FileTab: 2
+ButtonBase, javafx: 2
+progressPropertyImpl(): 2
+ImageLoader): 2
+ResourceBundle): 2
+checkDirty(): 2
+loadImpl(Class): 2
+setMinHeight(double): 2
+getOpacity(): 2
+sceneEffectiveOrientationInvalidated(): 2
+VBox, boolean): 2
+VBox$StyleableProperties: 2
+getInheritedStyle(javafx: 2
+ObjectPropertyBase): 2
+InputStream, Class): 2
+setImpl_caretBias(boolean): 2
+setPadding(javafx: 2
+focusedProperty(): 2
+getNearClip(): 2
+setMaxHeight(double): 2
+fillProperty(): 2
+promptSaveDialog(javafx: 2
+SkinBase$StyleableProperties: 2
+removeAccessible(javafx: 2
+Window$2: 2
+getSceneToLocalTransform(): 2
+doLayoutPass(): 2
+Scene$8: 2
+BooleanPropertyBase): 2
+setProgress(double): 2
+VBox, javafx: 2
+DoublePropertyBase): 2
+Label: 2
+adjustSize(boolean): 2
+HBox, javafx: 2
+setFillWidth(boolean): 2
+DoublePropertyBase$Listener: 2
+setImpl_caretPosition(int): 2
+HBox): 2
+Charset, java: 2
+setFill(javafx: 2
+getFileTabController(javafx: 2
+getType(String): 2
+setMaxWidth(double): 2
+impl_hasTransforms(): 2
+access$902(javafx: 2
+LinkedList): 2
+parentEffectiveOrientationInvalidated(): 2
+SupportedType, javafx: 2
+FXMLLoader, String, Class): 2
+initialize(Object): 2
+processProcessingInstruction(): 2
+access$3500(): 2
+setText(String): 2
+loadTypeForPackage(String, String): 2
+Scene, Object, String): 2
+getKeyHandler(): 2
+processCSS(): 2
+windowPropertyImpl(): 2
+doCSSPass(): 2
+computeMaxPrefAreaHeight(java: 2
+isFocused(): 2
+setOwnerScene(javafx: 2
+getPreferredHeight(javafx: 2
+getTextOrigin(): 2
+getSavedState(): 2
+HBox$StyleableProperties: 2
+WindowEvent): 2
+Callback, double[], boolean, boolean): 2
+SimpleStringProperty: 2
+setWindowFocused(boolean): 2
+Region, boolean): 2
+windowForSceneChanged(javafx: 2
+<init>(Object, String, boolean): 2
+Control, javafx: 2
+BuilderFactory): 2
+access$3800(): 2
+BooleanPropertyBase$Listener: 2
+getLocalToSceneTransform(): 2
+setDefaultButton(boolean): 2
+getAntiAliasingInternal(): 2
+localToParentTransformProperty(): 2
+adjustAreaWidths(java: 2
+Styleable, String): 2
+access$002(javafx: 2
+setImpl_selectionStart(int): 2
+Control, java: 2
+setValue(String): 2
+getFarClip(): 2
+LinearGradient: 2
+impl_preferredSize(): 2
+preferredSize(): 2
+isBindingExpression(String): 2
+closeAllTabs(): 2
+isBidirectionalBindingExpression(String): 2
+FXMLLoader$SupportedType: 2
+SceneAntialiasing): 2
+PseudoClass, boolean): 2
+getMinBaselineComplement(): 2
+SkinBase): 2
+adjustAreaHeights(java: 2
+centerOnScreen(): 2
+fillWidthProperty(): 2
+constructValue(): 2
+getDefaultClassLoader(Class): 2
+setEventHandler(javafx: 2
+InputStream, double, double, boolean, boolean, boolean): 1
+Scene$11: 1
+FXMLLoader$ControllerAccessor$1: 1
+access$100(): 1
+isMaximized(): 1
+ControllerAccessor, int, Class, int): 1
+FXMLLoader, Object): 1
+SaveDialog: 1
+updatePeerScene(com: 1
+access$700(): 1
+valueOf(String): 1
+getCacheHint(): 1
+setFocusDirty(boolean): 1
+clearImports(): 1
+Scene$InputMethodRequestsDelegate: 1
+TKScene): 1
+Scene$MouseHandler$1: 1
+setCharset(java: 1
+initStyle(javafx: 1
+getBlendMode(): 1
+FileTabPane: 1
+hasTransforms(): 1
+GeneralTransform3D): 1
+getWindowOwner(): 1
+consume(): 1
+MouseHandler): 1
+access$1502(javafx: 1
+Scene$ClickCounter: 1
+access$2100(): 1
+Stage, javafx: 1
+<init>(String, Class, String): 1
+isAlwaysOnTop(): 1
+initModality(javafx: 1
+KeyCombination$Modifier: 1
+processCharacters(): 1
+getPrefix(): 1
+Affine3D): 1
+isCache(): 1
+setCallerClass(Class): 1
+Stage$4: 1
+loadImage(String, double, double, boolean, boolean): 1
+Vec3d): 1
+stream: 1
+exit(): 1
+MethodHandler): 1
+xml: 1
+FileTabPaneController): 1
+computeViewTransform(com: 1
+isIconified(): 1
+Scene$ScenePulseListener: 1
+Tab, Controllers: 1
+validateUrl(String): 1
+getAccess(int): 1
+init(double, double): 1
+FXMLLoader, javax: 1
+SupportedType): 1
+getEffect(): 1
+toString(): 1
+XMLStreamReader): 1
+scanForConstructorAnnotations(Class): 1
+FXMLLoader$ControllerMethodEventHandler: 1
+importPackage(String): 1
+MouseButton: 1
+isFullScreen(): 1
+getFileTabControllerMap(): 1
+getTitle(): 1
+getEventType(): 1
+computePosition(com: 1
+Modality): 1
+getAttributePrefix(int): 1
+KeyCombination: 1
+<init>(Object, javafx: 1
+checkAllPermissions(): 1
+Scene$DropTargetListener: 1
+FXMLLoader$Attribute: 1
+Pos: 1
+Scene$ScenePeerListener: 1
+<init>(String, java: 1
+computeProjectionTransform(com: 1
+compareJFXVersions(String, String): 1
+impl_setAllowPGAccess(boolean): 1
+impl_clearDirty(com: 1
+observableMap(java: 1
