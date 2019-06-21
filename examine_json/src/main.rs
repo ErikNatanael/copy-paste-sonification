@@ -6,6 +6,7 @@ use std::fs::File;
 use std::io::Read;
 use std::collections::HashMap;
 
+// deserialize into this struct
 #[derive(Serialize, Deserialize)]
 struct NodeRepresentation {
     source: String,
@@ -13,23 +14,92 @@ struct NodeRepresentation {
     children: Vec<NodeRepresentation>,
 }
 
+// transfer data and compute additional data into this struct
 struct NodeData {
-    depth: i32,
+    source: String,
     name: String,
-    number_of_children: i32,
+    children: Vec<usize>, // indexes to children
+    deep_children: Vec<usize>, // indexes to all child nodes recursively
+    siblings: Vec<usize>, // indexes to siblings
+    depth: i32, //
 }
 
+impl NodeData {
+    pub fn new(node_rep: &NodeRepresentation) -> Self {
+        NodeData {
+            source: node_rep.source.clone(),
+            name: node_rep.name.clone(),
+            children: Vec::new(),
+            deep_children: Vec::new(),
+            siblings: Vec::new(),
+            depth: 0,
+        }
+        
+    }
+}
 
 fn main() {
     let file = File::open("data.json")
         .expect("file should open read only");
     
-    let data_tree: NodeRepresentation = serde_json::from_reader(file)
+    let mut data_tree: NodeRepresentation = serde_json::from_reader(file)
         .expect("file should be proper JSON");
-        
+    
+    count_words_start(&data_tree);
+    
+    // rewrite data in a different structure
+    write_data_to_file(&data_tree);
+    
+    let mut data_list: Vec<NodeData> = Vec::new(); // hold the new data representation
+    let mut depth_map: HashMap<i32, Vec<usize>> = HashMap::new();
+    
+    convert_data(&data_tree, &mut data_list, &mut depth_map);
+    
+    println!("children: {}, deep_children: {}", data_list[0].children.len(),  data_list[0].deep_children.len());
+}
+
+// Convert from NodeRepresentation to NodeData in a flat Vec
+fn convert_data(data_tree: &NodeRepresentation, 
+                data_list: &mut Vec<NodeData>, 
+                depth_map: &mut HashMap<i32, Vec<usize>>) {
+    
+    traverse_convert(data_tree, data_list, depth_map, 0);
+    // TODO: add all siblings from the depth_map
+}
+
+fn traverse_convert(data_tree: &NodeRepresentation, 
+                    data_list: &mut Vec<NodeData>, 
+                    depth_map: &mut HashMap<i32, Vec<usize>>,
+                    depth: i32,
+                ) -> Vec<usize> // returns all indexes of children
+{
+    let mut node = NodeData::new(data_tree);
+    node.depth = depth;
+    data_list.push(node);
+    let my_index = data_list.len()-1;
+    let mut indexes = vec![my_index];
+    // add my index to the appropriate depth_map Vec
+    let depth_vec = depth_map.entry(depth).or_insert(Vec::new());
+    depth_vec.push(my_index);
+    // do recursively for all child nodes
+    for child in &data_tree.children {
+        let new_indexes = traverse_convert(&child, data_list, depth_map, depth + 1);
+        match new_indexes.first() {
+            Some(v) => data_list[my_index].children.push(*v),
+            _ => ()
+        }
+        data_list[my_index].deep_children.extend(&new_indexes);
+        indexes.extend(&new_indexes);
+    }
+    indexes
+}
+
+// Count the number of occurrences of every word and write to a file
+fn count_words_start(data_tree: &NodeRepresentation) {
+    // HashMap to count words
     let mut map: HashMap<String, i32> = HashMap::new();
     
-    count_words(&data_tree, &mut map);
+    count_words(data_tree, &mut map);
     
     // convert HashMap to Vec
     let mut word_vec: Vec<(String, &i32)> = map
@@ -46,9 +116,6 @@ fn main() {
         println!("{}: {}", tuple.0, tuple.1);
         writeln!(out_file, "{}: {}", tuple.0, tuple.1).expect("Could not write to file");
     }
-    
-    // rewrite data in a different structure
-    write_data_to_file(&data_tree);
 }
 
 // count the amount of times a single word occurs in any name
@@ -72,7 +139,7 @@ fn count_words(data_tree: &NodeRepresentation, map: &mut HashMap<String, i32>) {
     }
 }
 
-
+// Write the data to a new file in a different representation
 fn write_data_to_file(data_tree: &NodeRepresentation) {
     let mut out_file = File::create("data_restyled.txt").expect("Could not open file");
     
@@ -95,8 +162,8 @@ fn traverse_data_tree(output_data: &mut Vec<String>, data_tree: &NodeRepresentat
     }
     out_string.push(' ');
     // convert name to &str (&* dereferences to str) and add
-    // out_string.push_str(&*data_tree.name.clone());
-    // out_string.push_str(&*format!(" {}", data_tree.children.len()));
+    out_string.push_str(&*data_tree.name.clone());
+    out_string.push_str(&*format!("-> {}", data_tree.children.len()));
     output_data.push(out_string);
     
     // do recursively for all child nodes

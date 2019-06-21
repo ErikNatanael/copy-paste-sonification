@@ -50,10 +50,20 @@ I don't really understand why the first node of the tree is "Main.SimpleTextEdit
 
 ### Analysis
 
-#### Word count
-
 By splitting the function names at . ( ) $ , I counted how many times each word occurred. There are 720 words in total and javafx is by far the most common one. In 9918 function calls it appeared 13111 times, on average 1.32 times per function call.
 
 I decided to write the data in a different format, using '>' to denote how far down the tree a function is called and ending with the number of child nodes it has. This reveales a flowing pattern going down and up the call tree. I decided to print only the '>'s to emphasize the flowing pattern (saved as data_restyled_wave.txt).
+
+#### Common words and their meaning
+
+- **javafx**: The GUI library used.
+- **scene**: The JavaFX Scene class is the container for all content in a scene graph.
+- **beans**: The package javafx.beans contains the interfaces that define the most generic form of observability. All other classes in the JavaFX library, that are observable, extend the Observable interface. An implementation of Observable may support lazy evaluation. Implementations of Observable should strive to generate as few events as possible to avoid wasting too much time in event handlers.
+- **Node**: Each item in the scene graph is called a Node. Leaf nodes are classes such as Rectangle, Text, ImageView, MediaView, or other such leaf classes which cannot have children.
+- **property**: Appears mostly(?) in the form of "javafx.beans.property"
+- **css**: Appears mostly as "javafx.css" or "com.sun.javafx.css" followed by e.g. StyleMap, Styleable, CalculatedValue, ParsedValueImpl, CascadingStyle
+- **<init>**: Represents initialisation made in the constructor in a stacktrace. <init>() or <init>(Object) mostly, but also more elaborate initialisations.
+- **layout**: javafx.scene.layout. Layouts are the top level container classes that define the UI styles for scene graph objects. Layout can be seen as the parent node to all the other nodes. JavaFX provides various layout panes that support different styles of layouts.
+- **get**: Getter method
 
 
