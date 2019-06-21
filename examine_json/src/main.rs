@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 use std::io::prelude::*;
 use std::fs::File;
 use std::io::Read;
+use std::io;
 use std::collections::HashMap;
 
 // deserialize into this struct
@@ -21,7 +22,8 @@ struct NodeData {
     children: Vec<usize>, // indexes to children
     deep_children: Vec<usize>, // indexes to all child nodes recursively
     siblings: Vec<usize>, // indexes to siblings
-    depth: i32, //
+    depth: i32,
+    index: usize,
 }
 
 impl NodeData {
@@ -33,8 +35,8 @@ impl NodeData {
             deep_children: Vec::new(),
             siblings: Vec::new(),
             depth: 0,
+            index: 0,
         }
-        
     }
 }
 
@@ -56,6 +58,19 @@ fn main() {
     convert_data(&data_tree, &mut data_list, &mut depth_map);
     
     println!("children: {}, deep_children: {}", data_list[0].children.len(),  data_list[0].deep_children.len());
+    
+    // Display data
+    while true {
+        let mut input = String::new();
+        print!("Show depth level: ");
+        let _=io::stdout().flush();
+        io::stdin().read_line(&mut input);
+        let depth = input.trim().parse::<i32>().expect("Can't parse integer");
+        let index_list = depth_map.get(&depth).unwrap();
+        for index in index_list {
+            println!("{}", &data_list[*index].name);
+        }
+    }
 }
 
 // Convert from NodeRepresentation to NodeData in a flat Vec
@@ -64,7 +79,8 @@ fn convert_data(data_tree: &NodeRepresentation,
                 depth_map: &mut HashMap<i32, Vec<usize>>) {
     
     traverse_convert(data_tree, data_list, depth_map, 0);
-    // TODO: add all siblings from the depth_map
+    // add all siblings from the depth_map
+    add_siblings(data_list, depth_map);
 }
 
 fn traverse_convert(data_tree: &NodeRepresentation, 
@@ -77,6 +93,7 @@ fn traverse_convert(data_tree: &NodeRepresentation,
     node.depth = depth;
     data_list.push(node);
     let my_index = data_list.len()-1;
+    data_list[my_index].index = my_index;
     let mut indexes = vec![my_index];
     // add my index to the appropriate depth_map Vec
     let depth_vec = depth_map.entry(depth).or_insert(Vec::new());
@@ -92,6 +109,19 @@ fn traverse_convert(data_tree: &NodeRepresentation,
         indexes.extend(&new_indexes);
     }
     indexes
+}
+
+// Add siblings to NodeData instances
+
+fn add_siblings(data_list: &mut Vec<NodeData>, depth_map: &mut HashMap<i32, Vec<usize>>) {
+    for node in data_list {
+        if let Some(sibling_list) = depth_map.get(&node.depth) {
+            node.siblings = sibling_list.clone();
+            // remove myself from the list of siblings
+            let my_sibling_index = node.siblings.iter().position(|&x| x == node.index).unwrap();
+            node.siblings.remove(my_sibling_index);
+        }
+    }
 }
 
 // Count the number of occurrences of every word and write to a file
