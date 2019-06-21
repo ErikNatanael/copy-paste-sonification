@@ -30,7 +30,6 @@ Go through the json and count occurences of words. Base sonification on where th
 
 Base kind of sound on how far down the tree an entry is so that the distance to the user can be heard.
 
-
 ## What kind of sounds would I want to use?
 
 - Fast progression of short sounds to invoke the speed with which things are happening while keeping it on a human timescale?
@@ -65,5 +64,63 @@ I decided to write the data in a different format, using '>' to denote how far d
 - **<init>**: Represents initialisation made in the constructor in a stacktrace. <init>() or <init>(Object) mostly, but also more elaborate initialisations.
 - **layout**: javafx.scene.layout. Layouts are the top level container classes that define the UI styles for scene graph objects. Layout can be seen as the parent node to all the other nodes. JavaFX provides various layout panes that support different styles of layouts.
 - **get**: Getter method
+
+#### Depth
+
+The amount of functions per depth level follows some kind of normal distribution centered on depth level 22 out of 44 levels in total. These results are saved in depth_wave.txt and a screenshot in depth_wave.png.
+
+#### Source
+
+There are 14 entries with the source "App", the rest are from "javafx".
+
+#### Words having something to do with copy-paste
+
+- text: 453
+- binding: 452
+- Text: 418
+- access: 229
+- KeyHandler: 9
+- KeyCodeCombination: 3
+- getKeyHandler: 2
+- KeyCombination: 2
+
+These are the words I found which possibly have something closer to do with the copy paste. Many of the instances surely do not, for example the setup of the text area which seems to account for many of the instances of "text".
+
+## Sonification
+
+Different ways to use the data in sonification:
+
+- as input to a wavetable oscillator
+- the depth level of a function to indicate distance from the user
+- the kinds of words included in the function name to signify different functionality
+  - source App or javafx can have fundamentally different sounds
+  - words to do with keys can have a fundamentally different sound
+
+In terms of time scale, the easiest way would be to have a constant grid during which sound events are triggered. This makes the false assumption that every function takes the same amount of time to execute, but I have no way of knowing the execution time.
+
+An important question is if functions shall "sound" only when they are first called or as long as they have child functions being executed. Having them sustain would mean that the first node will sound through the whole piece.
+
+Should the child functions have something sonically to do with the function calling them, or be treated as independent? One such dependence would be to treat them as overtones to the first node (the only node at the first depth level).
+
+### Sound material
+
+The previous sonification of the same data used some kind of granular synthesis of the words copy paste so I will not use the same method.
+
+The most straight forward and flexible way to sonify a dataset like this is through pure sound synthesis. The question is what parameters to focus on in conveying the structure of the data. 
+
+Pitch implies its own structures which can be used to our advantage, either by using some part of tonal harmony, a spectral approach or perhaps polychords.
+
+### Concrete implementation idea 1
+
+Focusing on the aspect of things happening closer or further away from the user or even the programmer of the text editor.
+
+Use the following sound mappings:
+
+- reverb: depth level (how far away from the user)
+- pitch: Different depending on the source. App entries take their pitch from a G major chord and javafx entries take theirs from a F#13 chord extending into overtones.
+- amplitude: Higher depth value gives quieter notes, but certain words being present 
+- length: Also depends on depth with higher depth values giving shorter notes
+- timbre: Because a sine tone in a reverb and a long sine tone sound approximately the same, a different timbre with some random movement should be used. 
+- tempo: Try keeping it constant, but it could also slow down at certain events and then speed up again.
 
 

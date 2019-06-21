@@ -24,6 +24,7 @@ struct NodeData {
     siblings: Vec<usize>, // indexes to siblings
     depth: i32,
     index: usize,
+    relevance: i32,
 }
 
 impl NodeData {
@@ -36,6 +37,20 @@ impl NodeData {
             siblings: Vec::new(),
             depth: 0,
             index: 0,
+            relevance: 1,
+        }
+    }
+    
+    pub fn calculate_relevance(&mut self, word_map: &HashMap<String, i32>) {
+        let words = split_into_words(&self.name);
+        for word in words {
+            self.relevance += match &*word {
+                "text" | "Text" => 3,
+                "binding" => 2,
+                "KeyHandler" | "getKeyHandler" => 5,
+                "KeyCodeCombination" | "KeyCombination" => 10,
+                _ => 0,
+            }
         }
     }
 }
@@ -47,20 +62,30 @@ fn main() {
     let mut data_tree: NodeRepresentation = serde_json::from_reader(file)
         .expect("file should be proper JSON");
     
-    count_words_start(&data_tree);
+    
     
     // rewrite data in a different structure
     write_data_to_file(&data_tree);
     
     let mut data_list: Vec<NodeData> = Vec::new(); // hold the new data representation
     let mut depth_map: HashMap<i32, Vec<usize>> = HashMap::new();
+    // HashMap to count words
+    let mut word_map: HashMap<String, i32> = HashMap::new();
+    count_words_start(&data_tree, &mut word_map);
     
     convert_data(&data_tree, &mut data_list, &mut depth_map);
     
-    println!("children: {}, deep_children: {}", data_list[0].children.len(),  data_list[0].deep_children.len());
+    // calculate relevance
+    for node in &mut data_list {
+        node.calculate_relevance(&word_map);
+    }
+    
+    write_depth_data(&depth_map);
+    
+    write_score1(&data_list);
     
     // Display data
-    while true {
+    loop {
         let mut input = String::new();
         print!("Show depth level: ");
         let _=io::stdout().flush();
@@ -70,6 +95,35 @@ fn main() {
         for index in index_list {
             println!("{}", &data_list[*index].name);
         }
+    }
+}
+
+fn write_score1(data_list: &Vec<NodeData>) {
+    let mut out_file = File::create("score1.csv").expect("Could not open file");
+    
+    for node in data_list {
+        writeln!(out_file, "{},{},{} ", node.depth, node.source, node.relevance).expect("Could not write to file");
+    }
+    
+}
+
+fn write_depth_data(depth_map: &HashMap<i32, Vec<usize>>) {
+    let mut out_file = File::create("depth_wave.txt").expect("Could not open file");
+    let mut depth_index: i32 = 0;
+    
+    loop {
+        let indexes = depth_map.get(&depth_index);
+        match indexes {
+            Some(indexes) => {
+                let mut out_str = String::new();
+                for _ in 0..indexes.len() {
+                    out_str.push('>');
+                }
+                writeln!(out_file, "{}", out_str).expect("Could not write to file");
+            },
+            None => break
+        }
+        depth_index += 1;
     }
 }
 
@@ -112,7 +166,6 @@ fn traverse_convert(data_tree: &NodeRepresentation,
 }
 
 // Add siblings to NodeData instances
-
 fn add_siblings(data_list: &mut Vec<NodeData>, depth_map: &mut HashMap<i32, Vec<usize>>) {
     for node in data_list {
         if let Some(sibling_list) = depth_map.get(&node.depth) {
@@ -125,11 +178,9 @@ fn add_siblings(data_list: &mut Vec<NodeData>, depth_map: &mut HashMap<i32, Vec<
 }
 
 // Count the number of occurrences of every word and write to a file
-fn count_words_start(data_tree: &NodeRepresentation) {
-    // HashMap to count words
-    let mut map: HashMap<String, i32> = HashMap::new();
+fn count_words_start(data_tree: &NodeRepresentation, map: &mut HashMap<String, i32>) {
     
-    count_words(data_tree, &mut map);
+    count_words(data_tree, map);
     
     // convert HashMap to Vec
     let mut word_vec: Vec<(String, &i32)> = map
@@ -143,18 +194,14 @@ fn count_words_start(data_tree: &NodeRepresentation) {
     let mut out_file = File::create("word_count.txt").expect("Could not open file");
     
     for tuple in word_vec {
-        println!("{}: {}", tuple.0, tuple.1);
+        // println!("{}: {}", tuple.0, tuple.1);
         writeln!(out_file, "{}: {}", tuple.0, tuple.1).expect("Could not write to file");
     }
 }
 
 // count the amount of times a single word occurs in any name
 fn count_words(data_tree: &NodeRepresentation, map: &mut HashMap<String, i32>) {
-    let words: Vec<String> = data_tree.name
-        // add more split signs using the closure
-        .split(|c| c == '.' || c == '(' || c == ')' || c == '$' || c == ',' || c == ' ') 
-        .map(|c| c.to_owned()) // convert from &str to String
-        .collect();
+    let words = split_into_words(&data_tree.name);
         
     // add to HashMap, if it is not already added, and increase counter
     for word in words {
@@ -167,6 +214,15 @@ fn count_words(data_tree: &NodeRepresentation, map: &mut HashMap<String, i32>) {
     for child in &data_tree.children {
         count_words(&child, map);
     }
+}
+
+fn split_into_words(string: &String) -> Vec<String> {
+    let words: Vec<String> = string
+        // add more split signs using the closure
+        .split(|c| c == '.' || c == '(' || c == ')' || c == '$' || c == ',' || c == ' ') 
+        .map(|c| c.to_owned()) // convert from &str to String
+        .collect();
+    words
 }
 
 // Write the data to a new file in a different representation
