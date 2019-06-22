@@ -5,10 +5,10 @@ SynthDef(\sine_lead, {
 	//breaking = min((pressure*4) + (pressure * excitation), 1.0);
 	//invBreaking = max(0.99 - breaking.pow(2), 0.0) + 0.01;
 
-	env = EnvGen.kr(Env.perc(0.01, \decay.kr(0.5), 1.0), doneAction:2);
+	env = EnvGen.kr(Env.perc(\attack.kr(0.02), \decay.kr(0.5), 1.0, -12.0), doneAction:2);
 	ampJitter = LFNoise2.kr(10 + (jitterAmount*100)).range(0.5-(jitterAmount*0.5), 1.0);
 
-	noiseSig = RHPF.ar(RLPF.ar(PinkNoise.ar()*0.1, freq, 0.02), freq, 0.01) * 0.01;
+	noiseSig = RHPF.ar(RLPF.ar(PinkNoise.ar()*0.1, freq, 0.02), freq, 0.01) * 0.08;
 	//noiseSig = (noiseSig*10).tanh * 0.5;
 	noiseSig = Pan2.ar(noiseSig*env*ampJitter, pan);
 
@@ -46,7 +46,7 @@ file_content = File.readAllString("score1.csv".resolveRelative);
 fork {
 	~score.do { | node |
 		//Synth(\sine_lead, [\amp, 1/(node.depth+1), \freq, (node.depth+1)*200, \decay, 10/(node.depth+1)]);
-		Synth(\sine_lead, [\amp, 0.1, \freq, (node.depth+1)*50, \decay, (10/(node.depth+1)).pow(2), \pan, rrand(-1, 1)]);
+		Synth(\sine_lead, [\amp, 0.1, \freq, (node.depth+1)*50, \decay, (10/(node.depth+1)).pow(3), \pan, rrand(-1, 1)]);
 		0.01.wait;
 	}
 }
