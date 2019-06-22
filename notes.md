@@ -148,4 +148,4 @@ Adds reverb, the amount of which depends on depth level. This gives the sounds a
 
 I experimented a little bit with letting the "relevance" level that I calculated using the words contained in the function, leaving most of my experiments out except for using it to modify the amplitude. This gives the sonification a bit more life.
 
-I would like to have a greater difference between events of different depth levels. The closest sounds don't feel very close right now. This could perhaps be done using distortion or a different synthesis technique for certain sounds.
+I would like to have a greater difference between events of different depth levels. The closest sounds don't feel very close right now. This could perhaps be done using distortion or a different synthesis technique for certain sounds (plucked string?) that has more presence in its sound. This could also emphasise the G major chord that the piece ends with, which is very blurry right now.
