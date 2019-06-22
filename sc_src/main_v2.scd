@@ -43,8 +43,10 @@ file_content = File.readAllString("score1.csv".resolveRelative);
 )
 
 (
-var gPitches = [31, 38, 47].midicps,
-fissPitches = [54, 58, 61, 64, 68, 71, 74, 76, 77].midicps; // 78 is the next f#
+var gPitches = ([31, 38, 47, 55, 62]).midicps,
+fissPitches = [54, 58, 61, 64, 68, 71, 74, 76, 77,
+	78, 82, 85, 88, 92, 95, 98, 100, 101, 102
+].midicps; // 78 is the next f#
 fork {
 	~score.do { | node |
 		var freq = 50, octave;
@@ -53,15 +55,14 @@ fork {
 			octave = (node.depth / gPitches.size).floor + 1; // how many times the depth value "wraps" the array length
 			freq = freq * octave;
 		}, {
-			freq = fissPitches[node.depth % fissPitches.size]; // get pitch from F# chord
-			octave = (node.depth / fissPitches.size).floor + 1; // how many times the depth value "wraps" the array length
-			//freq = freq * octave;
+			freq = fissPitches[node.depth % fissPitches.size]; // get pitch from F# chord, wrapping around it
+			octave = ((node.depth / fissPitches.size).floor); // how many times the depth value "wraps" the array length
+			//freq = freq * (((octave % 2 ) * 2 ) + 1);
 		});
 
 		//Synth(\sine_lead, [\amp, 1/(node.depth+1), \freq, (node.depth+1)*200, \decay, 10/(node.depth+1)]);
-		Synth(\sine_lead, [\amp, 0.1, \freq, (node.depth+1)*50, \decay, (10/(node.depth+1)).pow(3), \pan, rrand(-1, 1)]);
+		Synth(\sine_lead, [\amp, 0.1, \freq, freq, \decay, (10/(node.depth+1)).pow(3), \pan, rrand(-1, 1)]);
 		0.01.wait;
 	}
 }
 )
-~score[1].sourceName == "App"

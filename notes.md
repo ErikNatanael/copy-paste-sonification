@@ -124,3 +124,28 @@ Use the following sound mappings:
 - tempo: Try keeping it constant, but it could also slow down at certain events and then speed up again.
 
 
+# Experiments
+
+Notes on the progression of experimental versions.
+
+## copy-paste-1
+
+All events are 0.01 s long (so it takes around 1:30 to play all events, but the last events ring out for a long time), but decay time is decided by depth level. Pitch is simply 50 * (depth_level + 1), so overtones of somewhere between G and G#. Decay time decreases exponentially by depth level making the first notes ring for a very long time. There are no reverb effects or similar, but the slope of the decay makes it sound kind of like there is.
+
+The data has a structure that is much clearer when heard like this where the function calls are stuck at a very deep level for a long time until they slowly run back to the surface.
+
+The triadic nature of the low overtones gives the piece quite a tonal closure ending on a stable tonic. The fact that the high overtones at deep levels are so close together makes the early middle part quite boring in my ears, and boring is (sometimes) the enemy of wonder.
+
+## copy-paste-2
+
+The only thing that changed here is the pitches of the events. App and javafx events take their pitches from different groups of notes, the first being a G major chord, the second a F#13 extended upwards some more. The depth level is wrapped at the size of the array making pitches suddenly jump going down the levels of depth. While this is less true to the structure of the data, it creates some rhythmic effects making the sonification more interesting. The actual depth level is also conveyed through other parameters like the decay time.
+
+We lack the satisfying end of the tonic triad that kind of fits with the data, returning to the user to carry out the next task so to speak.
+
+## copy-paste-3
+
+Adds reverb, the amount of which depends on depth level. This gives the sounds a kind of under water feeling.
+
+I experimented a little bit with letting the "relevance" level that I calculated using the words contained in the function, leaving most of my experiments out except for using it to modify the amplitude. This gives the sonification a bit more life.
+
+I would like to have a greater difference between events of different depth levels. The closest sounds don't feel very close right now. This could perhaps be done using distortion or a different synthesis technique for certain sounds.
