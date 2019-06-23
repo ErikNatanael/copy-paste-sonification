@@ -136,5 +136,5 @@ nNodes.postln;
 )
 
 (
-([31, 38, 47, 55, 62]).midicps.do {|fr| Synth(\sine_lead, [\amp, amp, \freq, max(min(freq, 18000), 20), \decay, decay, \pan, rrand(-1, 1)]);
+([31, 38, 47, 55, 62]).midicps.do {|fr| Synth(\sine_lead, [\amp, 0.1, \freq, fr, \decay, 5, \pan, rrand(-1, 1)]) };
 )

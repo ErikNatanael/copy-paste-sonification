@@ -149,3 +149,23 @@ Adds reverb, the amount of which depends on depth level. This gives the sounds a
 I experimented a little bit with letting the "relevance" level that I calculated using the words contained in the function, leaving most of my experiments out except for using it to modify the amplitude. This gives the sonification a bit more life.
 
 I would like to have a greater difference between events of different depth levels. The closest sounds don't feel very close right now. This could perhaps be done using distortion or a different synthesis technique for certain sounds (plucked string?) that has more presence in its sound. This could also emphasise the G major chord that the piece ends with, which is very blurry right now.
+
+## copy-paste-4
+
+For this version I was experimenting with adding a wavetable synthesis based on the depth levels. I reduced the dataset by simply averaging points to create a wavetable of the correct size. As I thought, the result was a very high frequency heavy timbre. At fast attack rates it sounds like a plucked string under high tension. By overlaying the previous sound with this wavetable sound, but making it more implacted by the amplitude changes, more variation in timbre is produced.
+
+Another change I made was to have panning be less and less extreme the further down in depth you go (to simulate things moving down towards the middle)
+
+## copy-paste-5 
+
+Increasing the duration of every event by a factor of 10 reveals a lot more detail about the structures inherent in the data. You can pick out some recurring motifs. It also makes the whole thing almost 17 minutes long.
+
+The events are now at a rate that is playable by humans, although extremely difficult to perform exactly, so it is in within the normal timescale for music.
+
+## copy-paste-6
+
+Continuing the longer format. I changed the chord for the beginning and end (i.e. the source == "App" chord) to B which is the tonally simplest choice making the the whole thing one big cadence D13 - T. Reverb parameters and filters on the wavetable synthesis were tweaked.
+
+I experimented with letting the event amplitude control duration, but that resulted in lots of long notes in a row which was boring and didn't sound very good. Having the tempo dynamically change based on note amplitude didn't work that well either.
+
+While the piece is pretty long different parts of it are clearly different from eachother, there is a surprising amount of variation stemming from different combinations of depth levels and "relevance" metrics.
