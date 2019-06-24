@@ -8,7 +8,7 @@ date: "2019-06-24"
 
 After having examined the data.json file by hand to understand the structure of the data I parsed it in Rust and analysed the content in terms of word frequency, levels of depth (see depth_wave.txt and data_restyled_wave.txt). Looking up the meaning of some of the most common words in the JavaFX library gave me a better understanding of their function.
 
-Early on in the process I decided that the most obvious and probably most rewarding aspect to use for sonification was how far away from the user, and also the programmer of the software, following the descent deep into library calls. data_restyled_wave.txt shows the wavelike movement up and down the node tree. To add some additional connection to the copy paste theme I gave each event a relevance score based on words appearing in their function names (e.g. "KeyCodeCombination").
+Early on in the process I decided that the most obvious and probably most rewarding aspect to use for sonification was how far away from the user, and also the programmer of the software, following the descent deep into library calls. data_restyled_wave.txt shows the wave like movement up and down the node tree. To add some additional connection to the copy paste theme I gave each event a relevance score based on words appearing in their function names (e.g. "KeyCodeCombination").
 
 To simplify the sonification process I created a score in csv format exporting only the values I would use in the sonification (depth, source and relevance).
 
@@ -22,7 +22,7 @@ Reading the data set and following the functions I had trouble figuring out exac
 
 # Sonification Process
 
-All of the sonification took place in SuperCollider where I adapted a few synthesis techniques that I have used previously to this specific case as well as exterimented with some things that were completely new to me. The main_v\[1-7\].scd files in the sc_src folder correspond roughly to the recordings 1-7 in the recordings folder.
+All of the sonification took place in SuperCollider where I adapted a few synthesis techniques that I have used previously to this specific case as well as experimented with some things that were completely new to me. The main_v\[1-7\].scd files in the sc_src folder correspond roughly to the recordings 1-7 in the recordings folder.
 
 I made seven versions of the sonification experimenting with pitch material, timbres, reverb, delay, and a few different mapping strategies. At the heart of all of these mapping strategies was the use of the depth parameter to signify distance from the listener. For the 4th prototype I added wavetable synthesis where the movement in depth levels was translated to an audio rate signal used in an oscillator so that the data would be present both on the micro (or maybe nano) and macro level. Because this sound was very high frequency heavy I had to shape it quite a lot for it to fit the sound image I envisioned. Letting these wavetable synthesised sounds depend heavily on the relevance score and the "source" of the function call gave the sonification a surprising amount of structure and interesting variation.
 
