@@ -43,7 +43,7 @@ The code seems incompatible with JavaFX 11. I get error messages about BehaviorS
 
 ## The JSON file
 
-The structure of the JSON file seems to be that if a function A calls another function B, then B is a child node of A.
+The structure of the JSON file (comparing with the program source code) seems to be that if a function A calls another function B, then B is a child node of A.
 
 I don't really understand why the first node of the tree is "Main.SimpleTextEditor.lambda$onCloseEvent$0(javafx.stage.WindowEvent)". That seems to me like an event to close the program, not to copy or paste. There is no reference to copying or pasting that I've been able to find in the node tree. I will not worry too much about this, but instead deal with the data as it is.
 
@@ -169,3 +169,7 @@ Continuing the longer format. I changed the chord for the beginning and end (i.e
 I experimented with letting the event amplitude control duration, but that resulted in lots of long notes in a row which was boring and didn't sound very good. Having the tempo dynamically change based on note amplitude didn't work that well either.
 
 While the piece is pretty long different parts of it are clearly different from eachother, there is a surprising amount of variation stemming from different combinations of depth levels and "relevance" metrics.
+
+## copy-paste-7
+
+When listening through different speakers, version 6 seemed a bit heavy on the reverb and the wavetable synthesised sounds didn't quite sit right. I tried having the attack setting of the envelope depend on the depth level as well, providing more variation. The half short attack + super quick decay has something digital over it, perhaps reminiscent of some electronic game music I've heard. Having it on every wavetable event made it too muddy though so I preserved it for a few high relevance nodes. To add some interest I added a subtle delay with variable time and feedback, and a ramp for the lowpass filter for the wavetable oscillator at longer attack times, somewhat creating the illusion of the sound coming towards you.
