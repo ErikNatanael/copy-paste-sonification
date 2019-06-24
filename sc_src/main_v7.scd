@@ -172,6 +172,6 @@ s.waitForBoot( {
 				0.095.wait;
 			}
 		}
-	}
+	}.value();
 });
 )
