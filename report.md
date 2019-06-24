@@ -22,6 +22,8 @@ Reading the data set and following the functions I had trouble figuring out exac
 
 # Sonification Process
 
+All of the sonification took place in SuperCollider where I adapted a few synthesis techniques that I have used previously to this specific case as well as exterimented with some things that were completely new to me. The main_v\[1-7\].scd files in the sc_src folder correspond roughly to the recordings 1-7 in the recordings folder.
+
 I made seven versions of the sonification experimenting with pitch material, timbres, reverb, delay, and a few different mapping strategies. At the heart of all of these mapping strategies was the use of the depth parameter to signify distance from the listener. For the 4th prototype I added wavetable synthesis where the movement in depth levels was translated to an audio rate signal used in an oscillator so that the data would be present both on the micro (or maybe nano) and macro level. Because this sound was very high frequency heavy I had to shape it quite a lot for it to fit the sound image I envisioned. Letting these wavetable synthesised sounds depend heavily on the relevance score and the "source" of the function call gave the sonification a surprising amount of structure and interesting variation.
 
 Introducing the harsher sound of the wavetable synthesis also required me to radically reduce the tempo of the sonification, with the side effect of bringing out significantly more, but different, structures. The events now happen in a more human time-scale which make them slightly less alien and more relatable musically, but potentially also reduces the invocation of the computational sublime in the listener.
